@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Edit2, Trash2, ShoppingBag, X, Check } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const CustomerCard = ({ 
   customer = {},
@@ -145,32 +144,30 @@ const CustomerCard = ({
         )}
       </div>
 
-      {/* Delete Confirmation Alert */}
+      {/* Custom Delete Confirmation Alert */}
       {showDeleteConfirm && (
-        <Alert className="bg-gray-800 border-red-600">
-          <AlertTitle className="text-red-500">
+        <div className="bg-gray-800 border border-red-600 rounded-lg p-4">
+          <div className="text-red-500 font-semibold text-lg">
             Delete Customer?
-          </AlertTitle>
-          <AlertDescription>
-            <div className="mt-2 text-gray-300">
-              Are you sure you want to delete {customer.name}? This action cannot be undone.
-            </div>
-            <div className="mt-4 flex gap-2 justify-end">
-              <button
-                onClick={() => setShowDeleteConfirm(false)}
-                className="px-3 py-2 bg-gray-700 text-gray-200 rounded-md text-sm hover:bg-gray-600 transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleDelete}
-                className="px-3 py-2 bg-red-600 text-white rounded-md text-sm hover:bg-red-500 transition-colors"
-              >
-                Delete
-              </button>
-            </div>
-          </AlertDescription>
-        </Alert>
+          </div>
+          <div className="mt-2 text-gray-300">
+            Are you sure you want to delete {customer.name}? This action cannot be undone.
+          </div>
+          <div className="mt-4 flex gap-2 justify-end">
+            <button
+              onClick={() => setShowDeleteConfirm(false)}
+              className="px-3 py-2 bg-gray-700 text-gray-200 rounded-md text-sm hover:bg-gray-600 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleDelete}
+              className="px-3 py-2 bg-red-600 text-white rounded-md text-sm hover:bg-red-500 transition-colors"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
