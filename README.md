@@ -27,10 +27,7 @@ npm install
 
 Open the file `src/services/api.js` and update the `API_BASE_URL` to point to your API server:
 
-```javascript
-// Replace with your actual API URL
-const API_BASE_URL = 'http://47.32.130.184/api'; 
-```
+
 
 ### 4. Start the Development Server
 
