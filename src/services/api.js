@@ -1,5 +1,5 @@
 // API configuration
-const API_BASE_URL = 'http://47.32.130.184/api'; // Replace with your API URL
+const API_BASE_URL = 'https://route33.app/api';
 
 /**
  * API Service for interacting with the Linen Service API
